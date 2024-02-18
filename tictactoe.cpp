@@ -94,7 +94,10 @@ int main(){
     for (int i = 0; i < 3; i++) {
         matrix[i] = (char *)malloc(3 * sizeof(char));
     }
-
+    int ben;
+	printf("[1]: player vs computer\n[2]: player vs player\n=> YourChoice: ");
+	scanf("%i",&ben);
+	system("cls");
     for( int i = 0; i < 3; i++){
 		for( int j = 0; j < 3; j++){
 			matrix[i][j] = ' '; 
@@ -109,7 +112,8 @@ int main(){
 	char choiceX = 'x';
 	char choiceO = 'o';
 	//gamePlay
-	while(1){
+	if( ben == 1){
+		while(1){
 		int m,n;
 		printf("YourChoice: ");scanf("%i%i",&m,&n);
 		m = m-1;
@@ -123,7 +127,34 @@ int main(){
 			
 		// endGame
 		if(check(matrix) == 0){printf("Draw");break;}
-		if(check(matrix) == 1){printf("Win");break;}
-		if(check(matrix) == 2){printf("Lost");break;}
+		if(check(matrix) == 1){printf("You Win");break;}
+		if(check(matrix) == 2){printf("You Lost");break;}
+	}
+	}else{
+		while(1){
+		int m,n,p,q;
+		printf("Player 1: ");scanf("%i%i",&m,&n);
+		m = m-1;
+		n = n-1;
+		// choice X
+		matrix[m][n] = 'x';
+		system("cls");
+		// choice O	
+		print(matrix);
+		
+		if(check(matrix) == 0){printf("Draw");break;}
+		if(check(matrix) == 1){printf("Player 1 Win");break;}
+		if(check(matrix) == 2){printf("Player 2 Win");break;}
+		
+		printf("Player 2: ");scanf("%i%i",&p,&q);
+		matrix[p-1][q-1] = 'o';
+		system("cls");
+		print(matrix);
+			
+		// endGame
+		if(check(matrix) == 0){printf("Draw");break;}
+		if(check(matrix) == 1){printf("Player 1 Win");break;}
+		if(check(matrix) == 2){printf("Player 2 Win");break;}
+	}
 	}	
 }
