@@ -120,6 +120,11 @@ int main(){
 		n = n-1;
 		// choice X
 		matrix[m][n] = 'x';
+		system("cls");
+		print(matrix);
+		if(check(matrix) == 0){printf("Draw");break;}
+		if(check(matrix) == 1){printf("You Win");break;}
+		if(check(matrix) == 2){printf("You Lost");break;}
 		// choice O	
 		computerChoice(matrix);
 		system("cls");
