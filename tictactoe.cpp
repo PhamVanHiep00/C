@@ -1,3 +1,5 @@
+// code by PhamVanHiep_K68-UET
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
