@@ -116,6 +116,7 @@ int main(){
 		matrix[m][n] = 'x';
 		// choice O	
 		computerChoice(matrix);
+		system("cls");
 		print(matrix);
 			
 		// endGame
